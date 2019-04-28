@@ -1,0 +1,53 @@
+<body><p style="text-align:center;">
+	<img style="max-width: 300px; height: auto;" src={{ pArt }} width="400" height="400">
+<img id="graph" width="320px" height="240px" src="static/03.png">
+</p>
+<p style="text-align:center;">
+	<audio controls="controls" autoplay="true">
+		<source src={{ pUrl }}>
+	</audio>
+</p>
+<p style="text-align:center;font-size:30px;">
+	{{ pTrack }}
+</p>
+<p style="text-align:center;font-size:20px;">
+	{{ pArtist }}
+</p>
+<div style="text-align:center;">
+<form method="POST" action="/updateArtist">
+	<input type="form" name="artistForm"></input>
+	<input type="submit" name="artistSubmit" value="Search for an Artist"></input>
+</form>
+</div>
+
+<p style="text-align:center;">
+	<a href="/relatedArtist">Related Artist</a>
+</p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script language="javascript">
+setInterval(function(){
+    $("#graph").attr("src", "/static/03.png?"+new Date().getTime());
+},200);
+
+</script>
+</body>
+<style>
+body {
+      background: #383c4a;
+      color: aliceblue;
+      font-family:monospace;
+      text-align: center;
+    }
+a {
+	color:aliceblue;
+}
+input {
+	height:21px;
+	width:25%;
+	text-align:center;
+}
+p {
+	font-weight: bold;
+	font-size:16px;
+}
+</style>
